@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>R2D - Login Form</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.css"
+      integrity="sha256-+dIh4jG2jQTHZwW81yUo8h6tzXWcNumyNL5XPZbwp1E="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="grid" id="fullpage">
+      <!-- signu up form -->
+      <div class="sign-up-area section" id="signup">
+        <div class="sign-up-area-perfector">
+          <form class="forms">
+            <h1>R2D</h1>
+            <h2>Create account</h2>
+            <h4>Use authorised information</h4>
+
+            <input
+              type="text"
+              name="uname"
+              class="input-b-border"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="number"
+              name="roll"
+              class="input-b-border"
+              placeholder="Roll Number"
+              required
+            />
+
+            <div class="date-field">
+              <input
+                type="number"
+                name="Day"
+                placeholder="DD"
+                class="date-fields"
+                required
+              />
+              <input
+                type="number"
+                name="Month"
+                placeholder="MM"
+                class="date-fields"
+                required
+              />
+              <input
+                type="number"
+                name="Year"
+                placeholder="YYYY"
+                class="date-fields"
+                required
+              />
+            </div>
+
+            <select name="stream" class="dropdown">
+              <option>Select stream</option>
+              <option value=" "></option>
+            </select>
+
+            <select name="session" class="dropdown">
+              <option>Select session</option>
+              <option value=""></option>
+            </select>
+
+            <div class="submit-grid">
+              <a href="#signin" class="submit-grid-a">Log in</a>
+              <input
+                type="submit"
+                name="login"
+                value="Next"
+                class="submit-btn"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- signin form -->
+      <div class="sign-in-area section" id="signin">
+        <div class="sign-in-area-perfector">
+          <form action="includes/login_inc.php" method="post" class="forms">
+            <h1>R2D</h1>
+            <h2>Log In</h2>
+            <h4>Use your R2D account</h4>
+            <input
+              type="text"
+              name="uid"
+              class="input-b-border"
+              placeholder="Enter your ID"
+              required
+            />
+            <input
+              type="password"
+              name="pwd"
+              class="input-b-border"
+              placeholder="Password"
+              required
+            />
+
+            <div class="submit-grid">
+              <a href="#signup" class="submit-grid-a">Create account</a>
+              <input
+                type="submit"
+                name="login"
+                value="Next"
+                class="submit-btn"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on("click", function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              800,
+              function () {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
+      });
+    </script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js"
+      integrity="sha256-caNcSA0LvOCX90PTuEbwl+V09xPMca13CJUasl+VCtk="
+      crossorigin="anonymous"
+    ></script>
+    <!--fullpage js -->
+
+    <script>
+      new fullpage("#fullpage", {
+        //options here
+        autoScrolling: false,
+        setLockAnchors: true,
+        fitToSectionDelay: 100,
+        navigation: true,
+      });
+    </script>
+  </body>
+</html>
